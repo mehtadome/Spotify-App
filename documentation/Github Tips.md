@@ -35,7 +35,7 @@ It should look something like this afterwards:
 
 ## Basic Git Commands
 
-Order of additions: `add` to tracking, `commit` to pipeline, `push` to repository.
+Order of additions: `add` to [_"tracking"_](https://stackoverflow.com/questions/4693588/what-is-a-tracking-branch), `commit` to pipeline, `push` to repository.
 
 Prepare a single file for committing to repository.
 
@@ -80,6 +80,45 @@ git branch
 ```
 
 - Typically highlights yours in the color green.
+
+_"Pull"_ in recent changes.
+
+```
+git pull
+```
+
+## Git Pull
+
+I highly recommend you follow the section below and setup _rulesets_ before coming here.
+
+`git pull` is the standard way to update your local repository with changes to your online repository.
+
+If someone made changes to the `Default`, there are chances for _merge conflicts_ to arise. This is when your changes conflict with someone else's conflicts.
+
+- Read more [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+
+### Depends on Branch
+
+Running `git pull` in a custom branch is different than main.
+
+If you chose **to** automatically delete branches, it's good practices to delete your current one and start anew.
+
+```
+git checkout main
+git pull
+git branch -d branch_name
+git checkout -b new_branch_name
+```
+
+- `-D` would force delete (including any untracked changes).
+
+Should you have chosen **not to** automatically delete branches upon PR merge, you should run the following. This updates your local branch with the recent `main` changes.
+
+```
+git pull origin <remote-branch-name>
+```
+
+- `origin` is standard identifier for main.
 
 # Modern DevOps Practices (_for Github_)
 
@@ -166,15 +205,26 @@ Create a ruleset called _"Protect Main"_.
 
 - "Restrict deletions" and "Block force pushes" will automatically be selected.
 - Also, select "Require a pull request before merging".
-- - If developing by yourself, choose approvals to be 0. If with other team members, 1 shall suffice.
+
+**"Additional Settings"** under Require Pull Requests:
+
+- If developing by yourself, choose approvals to be 0. If with other team members, 1 shall suffice.
+- If you want to ensure recent changes are approved, select "Dismiss stale...".
+- If you want to ensure any conversations about your code are resolved, select "Require conversation...".
 
 With these changes, you will given a url after you `push`. This generates something called a _pull request_ to get your code in production.
+
+These configurations allows you / the team to track the changes you have made to production.
 
 ### What's a Pull Request?
 
 A [_Pull Request_](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) is a code review which requires other collaborators (or yourself) to view and approve the changes you are trying to push to prod.
 
 This forces other collaborators (coworkers, project peers) to review your changes and can prevent you from pushing potentially harmful changes.
+
+When **working alone**, I recommend you to mimic this functionality by "approving" your own Pull Requests.
+
+- The steps above would have ensured you can merge your own PRs.
 
 ### General Settings Applied
 
@@ -194,6 +244,25 @@ This forces other collaborators (coworkers, project peers) to review your change
 
 <br>
 
-**"Automatically delete head branches"**: After a pull request is merged, the branch that was the source of the pull request is automatically deleted.
+**"Automatically delete head branches"**: After a pull request is merged, the branch that was the source of the pull request is automatically deleted from remote repository.
 
+> Note: This won't delete your local branch.
+
+- `remote` is the standard identifier for you online repository ([https://github.com/\*]()).
 - Great for preventing clutter and maintaining readability in tracking.
+
+Other branches would show up here. I have been on many teams which don't automatically delete leading to hundreds of unused branches showing up in remote.
+
+- Keep in mind you can restore a deleted branch should you choose to.
+
+![Branches Location](./assets/img/branches_location.png)
+
+[**Back to Git Pull**](./Github%20Tips.md/#git-pull)
+
+# Appendix
+
+[Helpful solution for disabling approvals.](https://github.com/orgs/community/discussions/74977)
+
+How ruleset should look for solo developing to mimic best DevOps practices.
+
+![Ruleset Configuration](./assets/img/ruleset_config.png)
