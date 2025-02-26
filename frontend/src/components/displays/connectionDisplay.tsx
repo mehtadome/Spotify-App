@@ -1,10 +1,9 @@
+import { FavoritesProps } from "../../pages/Favorites";
 import "./connectionDisplay.css";
 import { useEffect, useState } from "react";
 
-const username: string = "ish_kaurrr";
-
-export const ConnTest: React.FC = () => {
-  // const [playlists, setPlaylists] = useState<Playlists>({});
+// Should simply display "Yo, Hello World!"
+export const ConnTest: React.FC<FavoritesProps> = ({ username }) => {
   const [test, setTest] = useState("");
   const [error, setError] = useState<string | null>(null);
 

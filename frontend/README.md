@@ -95,6 +95,8 @@ In Node.js applications, your code resides in `src` and other user-created modul
 
 In React.js, your visuals are called [function components](https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components/).
 
+`pages` are where separate pages should be located (not setup as such right now).
+
 # Connect to Backend
 
 ### Important Note
@@ -112,6 +114,8 @@ npm run dev
 Now with the backend and frontend setup, we need to connect the two together. To do so, we have a basic API setup. Here's how it works:
 
 1. We type our Spotify username into a form and click submit.
-2. Vite ingests your username and forwards it to an endpoint we have setup on Flask at `localhost:8080/api/favorites/<username>`.
+2. Vite ingests your username and forwards it to an endpoint we have setup on Flask at `localhost:5000/api/favorites/<username>`.
 3. Flask receives your name, makes a [_GET_](https://www.w3schools.com/tags/ref_httpmethods.asp) request to Spotify API through `spotipy`, and returns a JSON response and the [HTTP Code 200](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200) to signify successful communication.
-4. Vite, using an [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) TypeScript function, parses the response and displays your favorite artists and created playlists.
+4. Vite, using an [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) TypeScript function, parses the response and displays your recently liked songs and created playlists.
+
+**Note**: Check out what is configured in `vite.config.ts`.

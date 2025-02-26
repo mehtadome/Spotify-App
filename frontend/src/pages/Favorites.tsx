@@ -7,6 +7,11 @@ export interface FavoritesProps {
   username: string;
 }
 
+/**
+ * Displays two FCs by passing down username as a property.
+ * @param { username } Spotify username.
+ * @returns <FC>
+ */
 const Favorites: React.FC<FavoritesProps> = ({ username }) => {
   return (
     <>
@@ -14,7 +19,7 @@ const Favorites: React.FC<FavoritesProps> = ({ username }) => {
         <h1>{username}'s Library Insights</h1>
         <Last20Likes username={username} />
         <UserPlaylists username={username} />
-        <ConnTest />
+        <ConnTest username={username} />
       </div>
     </>
   );

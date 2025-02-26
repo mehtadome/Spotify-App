@@ -1,6 +1,6 @@
 # Getting Started with Spotify API
 
-This quick tutorial should give you everything you need to get started with Spotify API. Ensure you finished **Step 1** on [Getting Started Tutorial](https://developer.spotify.com/documentation/web-api/tutorials/getting-started).
+This quick tutorial should give you everything you need to get started with Spotify API. Ensure you finished **Step 1** on Spotify's [Getting Started Tutorial](https://developer.spotify.com/documentation/web-api/tutorials/getting-started).
 
 - If you're opening this file in VSCode. Right click the file banner and `Open Preview` or `[Cmd + Shift + V]`.
 
@@ -85,10 +85,11 @@ Create your `.env` file and populate it with:
 ```
 CLIENT_ID='id here'
 CLIENT_SECRET='secret here'
-REDIRECT_URI='http://localhost'
+REDIRECT_URI="http://localhost"
 ```
 
 - You will be able to find `client_id` and `client_secret` in the setting for your Spotify Developer application.
+- The `redirect_uri` needs to also be configured in your Spotify Developer Application settings and **EXACTLY** match the value in your `.env`. [Why?](../README.md/#spotipy-authentication)
 
 ### Start Backend
 

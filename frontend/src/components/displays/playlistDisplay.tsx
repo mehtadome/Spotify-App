@@ -10,12 +10,12 @@ import { FavoritesProps } from "../../pages/Favorites";
  */
 export const UserPlaylists: React.FC<FavoritesProps> = ({ username }) => {
   /**
-   * Uncomment the following line if the below error breaks your code:
+   * Uncomment and use the following line if the below error breaks your code:
    *  Argument of type '{}' is not assignable to parameter of type 'SetStateAction<Playlists>'.ts(2345)
    *
    * // const [playlists, setPlaylists] = useState<unknown>({});
    *
-   * Description: TypeScript will not be determine what "type" of data will be passed back down from your backend.
+   * Description: TypeScript will not be able to determine what "type" of data will be passed back down from your backend.
    *  * We assign it an empty dict knowing that is its base state.
    */
   // const [playlists, setPlaylists] = useState<Playlists>({});

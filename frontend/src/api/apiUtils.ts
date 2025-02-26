@@ -1,4 +1,4 @@
-export const BASE_URL: string = `/api`; // nginx edit
+export const BASE_URL: string = `/api`;
 
 export interface FetchApiResponse<T> {
   data: T;

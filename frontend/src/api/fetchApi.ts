@@ -1,6 +1,6 @@
 import { FetchApiResponse } from "./apiUtils";
 
-// INFO: BASE_URL= http://localhost:8080/api
+// INFO: BASE_URL= http://localhost:5000/api
 
 // TYPES
 export interface Playlists {
@@ -13,8 +13,8 @@ export interface Songs {
 
 // API Functions
 /**
- * GET: Grab last 20 liked songs with user's Spotify username.
- * PATH: http://localhost:8080/api/favorites/<username>
+ * GET: Grab last 20 liked songs using Spotify username.
+ * PATH: http://localhost:5000/api/favorites/<username>
  * @param { username } <string>
  * @returns { songs } <JSON>
 *  Example Response:
@@ -36,8 +36,8 @@ export async function fetchLast20Likes<Songs>(
   });
 
   if (!response.ok) {
-    console.log("TOP 20: ", response);
-    throw new Error(`Top20 HTTP error! status: ${response.status}`);
+    console.log("Last 20: ", response);
+    throw new Error(`Last 20 HTTP error! status: ${response.status}`);
   }
 
   const data = await response.json();
@@ -47,19 +47,9 @@ export async function fetchLast20Likes<Songs>(
   };
 }
 
-// return fetch(`${BASE_URL}/favorites/${username}`)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     return {
-//       data,
-//       status: response.status,
-//     };
-//   })
-//   .catch(handleError);}
-
 /**
- * GET: Grab user's playlists with user's Spotify username.
- * PATH: http://localhost:8080/api/favorites/playlists/<username>
+ * GET: Grab user's playlists using Spotify username.
+ * PATH: http://localhost:5000/api/favorites/playlists/<username>
  * @param { username } <string>
  * @returns { playlists } <JSON>
  *    
@@ -91,11 +81,18 @@ export async function fetchUserPlaylists<Playlists>(
     data,
     status: response.status,
   };
-
-  // return fetch(`${BASE_URL}/favorites/playlists/${username}`)
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     return data;
-  //   })
-  //   .catch(handleError);
 }
+
+/** Another way to fetch
+ * *
+ * return fetch(`${BASE_URL}/favorites/${username}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return {
+      data,
+      status: response.status,
+    };
+  })
+  .catch(handleError);} // dev-defined function handleError()
+ * 
+ */
