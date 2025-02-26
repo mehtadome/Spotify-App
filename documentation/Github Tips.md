@@ -15,7 +15,7 @@ git add .gitignore
 git commit -m "Initialize Spotify App Repo"
 ```
 
-Next, you will need to go on the [browser](https://github.com/) or Desktop App and create a new repository. Copy the **HTTPS** link it provides you.
+Next, you will need to go on the [browser](https://github.com/) or Desktop App and [create a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository). Copy the **HTTPS** link it provides you.
 
 ```
 git remote add origin https://github.com/<rest of link>.git
