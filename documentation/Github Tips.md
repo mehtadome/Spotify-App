@@ -149,6 +149,14 @@ git branch
 
 When you are ready to submit your edits to production, you will `add`, `commit`, `push`. However, without configuring IAM policies, you run the risk of pushing security vulnerabilities or code bugs to prod.
 
+### Best Practice
+
+Use your initials as the prefix. It will make it easier to identify who created what.
+
+```
+git checkout -b rm_more_doc_updates
+```
+
 ### What happens if you accidentally coded in `main`?
 
 Not to fear, I have done this a lot. You can make a new branch **before** adding your changes and they will flock to your new branch.
@@ -225,6 +233,12 @@ This forces other collaborators (coworkers, project peers) to review your change
 When **working alone**, I recommend you to mimic this functionality by "approving" your own Pull Requests.
 
 - The steps above would have ensured you can merge your own PRs.
+
+#### PR Example
+
+![Pull Request Example](./assets/img/pr_example.png)
+
+- Most PR's support Markdown. Highly recommend becoming familiar with its [basics](https://www.markdownguide.org/basic-syntax/).
 
 ### General Settings Applied
 
