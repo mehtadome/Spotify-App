@@ -4,6 +4,6 @@ This folder provides extra notes on Github, DevOps practices, and what your App 
 
 [**Github Information**](./Github%20Tips.md/)
 
-[**Modern DevOps Practices**](./Github%20Tips.md/#modern-devops-practices)
+[**Modern DevOps Practices**](./Github%20Tips.md/#modern-devops-practices-for-github)
 
 [**App Example**](./App.md)
