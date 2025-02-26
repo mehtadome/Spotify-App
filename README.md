@@ -63,13 +63,11 @@ cd frontend
 npm run dev
 ```
 
-# Appendix
-
-## Github Tips
+# Github Tips
 
 Consider adding the [Github extension](https://code.visualstudio.com/docs/sourcecontrol/github) to VSCode to automatically authenticate you for root-level permissions.
 
-### Repository Creation
+## Repository Creation
 
 To create your own repository, while in your root folder (mine is `./Spotify\ App/`), run:
 
@@ -94,6 +92,106 @@ You may need to give yourself access first. To do this, go to:
 
 - Settings --> Developer Settings (bottom of left navbar) --> Create Personal Access Token (classic).
 - Select "repo" and save the token somewhere.
+
+## Basic Git Commands
+
+Order of additions: `add` to tracking, `commit` to pipeline, `push` to repository.
+
+Prepare a single file for committing to repository.
+
+```
+git add <file_name>
+```
+
+**OR**
+
+Prepare all files for committing to repository.
+
+```
+git add *
+```
+
+Commit to pipeline.
+
+```
+git commit -m "Message"
+```
+
+- `-m` message is typically required.
+
+Push to repository.
+
+```
+git push --set-upstream origin main
+```
+
+Check file changes made on your branch.
+
+```
+git status
+```
+
+Check branch you're on.
+
+```
+git branch
+```
+
+## Modern DevOps Practices
+
+Have you ever wondered how to integrate standard DevOps practices with Github?
+
+- Current standards.
+- Restricting pushes to main.
+- Unauthorized forced pushes.
+- Requiring code reviews.
+
+### Branches
+
+Start learning to never code directly on main. When you get to corporate, you will be targeting many features / tasks at once.
+
+You will use branches to simultaneously develop separate changes at once.
+
+Start by:
+
+```
+git branch test_branch
+git checkout test_branch
+git branch
+```
+
+- `git branch` will now show two branches, test_branch and main.
+
+### Enforce Rules
+
+Navigate to your Github repository and click "Settings" --> "General".
+
+- Choose whatever branch you want as your default branch (typically set to _Main_).
+
+Under **Pull Requests**, select the following:
+
+- "Allow merge commits", "Allow squash merging", "Allow rebase merging".
+- "Always suggest updating pull request branches."
+- "Allow auto-merge".
+- "Automatically delete head branches".
+
+Under "Settings" --> "Branches", you can add a new rule to see the various options configurable.
+
+Under "Settings" --> "Rulesets" --> "New Ruleset", you can configure which users in your repository can do what.
+
+Personally, I always create and enable a ruleset "Protect Main".
+
+- "Add target" --> "Include default branch"
+
+It will:
+
+- "Restrict deletions", Require a pull request with 1 approval before merging, and "Block force pushes".
+
+This will prevent myself from making harmful mistakes.
+
+With these changes, you will given a url after you push. This generates something called a _pull request_, pretty much a code review to get your code in production.
+
+# Appendix
 
 ### Bugs / Issues
 
