@@ -96,6 +96,7 @@ I highly recommend you follow the section below and setup _rulesets_ before comi
 If someone made changes to the `Default`, there are chances for _merge conflicts_ to arise. This is when your changes conflict with someone else's conflicts.
 
 - Read more [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+- If this is skipped, you'll likely have to fix it in the browser before being able to merge your pull request.
 
 ### Depends on Branch
 
