@@ -240,6 +240,10 @@ When **working alone**, I recommend you to mimic this functionality by "approvin
 
 - Most PR's support Markdown. Highly recommend becoming familiar with its [basics](https://www.markdownguide.org/basic-syntax/).
 
+Finally, merge:
+
+![Merge Pull Request](./assets/img/merge_pr.png)
+
 ### General Settings Applied
 
 **"Allow merge commits"**: The way Git makes your changes to prod is by _merging_ your branch with `Default`.
