@@ -15,7 +15,7 @@ git add .gitignore
 git commit -m "Initialize Spotify App Repo"
 ```
 
-Next, you will need to go on the [browser](https://github.com/) or Desktop App and create a new repository. Copy the **HTTPS** link it provides you.
+Next, you will need to go on the [browser](https://github.com/) or Desktop App and [create a new repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository). Copy the **HTTPS** link it provides you.
 
 ```
 git remote add origin https://github.com/<rest of link>.git
@@ -101,7 +101,7 @@ If someone made changes to the `Default`, there are chances for _merge conflicts
 
 Running `git pull` in a custom branch is different than main.
 
-If you chose **to** automatically delete branches, it's good practices to delete your current one and start anew.
+If you **chose to** automatically delete branches, it's good practices to delete your current one and start anew.
 
 ```
 git checkout main
@@ -112,7 +112,7 @@ git checkout -b new_branch_name
 
 - `-D` would force delete (including any untracked changes).
 
-Should you have chosen **not to** automatically delete branches upon PR merge, you should run the following. This updates your local branch with the recent `main` changes.
+Should you have **chosen not to** automatically delete branches upon PR merge, you should run the following. This updates your local branch with the recent `main` changes.
 
 ```
 git pull origin <remote-branch-name>
@@ -222,7 +222,7 @@ Create a ruleset called _"Protect Main"_.
 
 With these changes, you will given a url after you `push`. This generates something called a _pull request_ to get your code in production.
 
-These configurations allows you / the team to track the changes you have made to production.
+These configurations allow you / the team to track the changes you have made to production.
 
 ### What's a Pull Request?
 
@@ -230,7 +230,7 @@ A [_Pull Request_](https://docs.github.com/en/pull-requests/collaborating-with-p
 
 This forces other collaborators (coworkers, project peers) to review your changes and can prevent you from pushing potentially harmful changes.
 
-When **working alone**, I recommend you to mimic this functionality by "approving" your own Pull Requests.
+When **working alone**, I recommend you mimic this functionality by "approving" your own Pull Requests.
 
 - The steps above would have ensured you can merge your own PRs.
 
@@ -281,6 +281,6 @@ Other branches would show up here. I have been on many teams which don't automat
 
 [Helpful solution for disabling approvals.](https://github.com/orgs/community/discussions/74977)
 
-How ruleset should look for solo developing to mimic best DevOps practices.
+How your ruleset should look for solo developing to mimic best DevOps practices.
 
 ![Ruleset Configuration](./assets/img/ruleset_config.png)
