@@ -84,6 +84,7 @@ npm run prod
 ## Breakdown of how Frontend App works
 
 `package.json` is where you define all your dependencies and custom scripts in [`JSON`](https://www.json.org/json-en.html) format.
+- If you built by yourself, the following needs to be added under the `dependencies` scope: `"react-router": "^7.2.0", "react-router-dom": "^7.2.0"`.
 
 `package-lock.json` is a read-only file which is built when you run `npm install`. It links your dependencies in `node_modules` to your code's logic by the compiler.
 
