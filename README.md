@@ -5,6 +5,12 @@ For detailed breakdown of full-stack application logic, in order read:
 - `./backend/` [README.md](./backend/README.md)
 - `./frontend/` [README.md](./frontend/README.md)
 
+## Clone Repository
+```
+git clone https://github.com/mehtadome/Spotify-App.git
+cd Spotify-App/
+```
+
 ### Terminal 1 - Start Flask
 
 ```
